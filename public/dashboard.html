@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        <h1>Welcome to the Chat App</h1>
+        <div id="user-info">
+            <span id="logged-in-user">Logged in as: </span>
+            <button id="logout-button">Logout</button>
+        </div>
+    </header>
+        <main>
+          <div class="side-panel">
+            <div class="user-list">
+              <h3>Users</h3>
+              <ul id="user-list">
+                <!-- Dynamically generated user list -->
+              </ul>
+            </div>
+            <div class="group-list">
+              <h3>Groups</h3>
+              <ul id="group-list">
+                <!-- Dynamically generated group list -->
+              </ul>
+              <button id="open-create-group-modal">Create Group</button>
+            </div>
+          </div>
+          <div class="chat-section">
+            <h3>Chat</h3>
+            <div class="chat-messages" id="chat-messages">
+              <!-- Dynamically generated chat messages -->
+            </div>
+            <div class="chat-input">
+              <button id="emoji-btn" title="Pick an emoji">😀</button>
+              <!-- Emoji Picker (hidden by default) -->
+              <div id="custom-emoji-picker" class="emoji-picker" style="display: none;"></div>
+              <input type="text" placeholder="Type a message..." id="chat-input" />
+              <button id="send-btn">Send</button>
+            </div>
+          </div>
+        </main>
+      </div>
+
+       <!-- Group Creation Modal -->
+        <div id="create-update-group-modal" class="modal">
+          <div class="modal-content">
+              <span class="close-btn" id="close-modal">&times;</span>
+              <h2 id="create-update-group-modal-title">Create Group</h2>
+              <form id="create-update-group-form">
+                  <label for="group-name">Group Name:</label>
+                  <input type="text" id="group-name" name="group-name" required />
+
+                  <label for="group-description">Group Description:</label>
+                  <textarea id="group-description" name="group-description" rows="3" required></textarea>
+
+                  <label id="group-members-label" for="group-members">Add Members:</label>
+                  <div id="group-members-list" class="checkbox-list">
+                      <!-- Dynamically populated with user checkboxes -->
+                  </div>
+
+                  <button type="submit" class="btn">Submit</button>
+              </form>
+          </div>
+      </div>
+      <script src="js/dashboard.js"></script>
+    </body>
+</html>
